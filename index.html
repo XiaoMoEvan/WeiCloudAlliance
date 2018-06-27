@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小莫mini官网首页</title>
+    <meta name="keywords" content="小莫学长,MiMo-小莫学长,小莫云联盟,工作室,小莫QQ空间创意设计,爱酷吧免费资源分享,站长小莫绿色互联平台"/>
+    <meta name="description" content="小莫云联盟工作室丨创意设计·资源分享·网络绿色互联平台,共创网赚平台,找伙伴,找资源,找素材,找特效就来小莫云联盟。"/>
+    <!--视口检测-->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"
+          id="viewport"/>
+    <!--背景音乐代码-->
+    <!--<audio autoplay loop=""><source src="bgmusic/bgmusic.mp3"></audio>-->
+
+    <!--引入网页ICO图标 在网页的title 之前显示 第2个是书签ICO-->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
+    <link href="css/style.min2.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+    </style>
+    <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="js/base.js"> </script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <!--弹幕插件-->
+    <link rel="stylesheet" type="text/css" href="css/barrager.css">
+    <script type="text/javascript" src="js/jquery.barrager.min.js"></script>
+
+    <script type="text/javascript">
+//        window.onload=function(){
+//            var aNodes=document.getElementById("userCenter").getElementsByTagName("a");
+//
+//            for(var i=0;i<aNodes.length;i++){
+//                aNodes[i].onclick=function(){
+//                    var request=new XMLHttpRequest();
+//                    var method="GET";
+//                    var url=this.href;
+//                    request.open(method,url);
+//                    request.send(null);
+//
+//                    request.onreadystatechange=function(){
+//                        if(request.readyState==4){
+//                            if(request.status==200||request.status==304){
+//                                document.getElementById("testHtmlLoad").innerHTML=request.responseText;
+//                            }
+//                        }
+//                    }
+//                    return false;
+//                }
+//            }
+//
+//        }
+//        window.onload=function(){
+//            var navNodes=document.getElementById("nav").getElementsByTagName("a");
+//
+//                for(var i=0;i<navNodes.length;i++){
+//                    navNodes[i].click=function(){
+//                        for(var i=0;i<navNodes.length;i++){
+//                           navNodes[i].addClass("navActive").siblings().removeClass("navActive");
+//                        }
+//                    }
+//                }
+//
+//        }
+//窗口水平居中
+
+
+    </script>
+</head>
+<body>
+    <!--浮动发个弹幕试试 代码开始-->
+    <div id="barrager_Botton">
+        <a href="javascript:void(0);" id="barragerShow">
+            <img src="images/barrager.gif" alt="弹幕">
+            <span id="barrager_Show">发个弹幕试试</span>
+        </a>
+        <span id="barrager_Hidden">></span>
+      </div>
+    <div id="barrager_Content">
+        <div class="b_Content_title">
+            <span>发个弹幕试试吧</span><span id="b_Content_title_close" title="关闭">+</span>
+        </div>
+        <form>
+            <lable>弹幕内容：</lable>
+            <input name="info" type="text" placeholder="填写弹幕文字信息"/>
+            <br>
+            <br>
+            <lable>弹幕链接：</lable>
+            <input name="href" type="text" placeholder="http://www.925i.cn"/>
+            <!--<lable>弹幕延迟：</lable>-->
+            <!--<input name="speed" type="text" placeholder="6" value="6" />-->
+            <!--<lable>关闭按钮：</lable>-->
+            <!--<input name="close" type="checkbox" checked >-->
+            <!--<lable>高度随机：</lable>-->
+            <!--<input type="radio" name="bottomradio" value="0" checked="checked">-->
+            <!--<lable>弹幕图片：</lable>-->
+            <!--<input type="radio" name="img"  value="barrager.gif" checked="">-->
+            <!--<lable>文字颜色：</lable>-->
+            <!--<input type="text" value="fff" name="color">-->
+
+        </form>
+        <button onclick="run()">弹！弹！弹！</button>
+    </div>
+
+    <!--浮动发个弹幕试试 代码结束-->
+
+
+    <!--迷你资料卡代码开始-->
+    <div class="aboutXiaoMoMini" id="aboutXiaoMoMini">
+        <img src="images/avatar.jpg" alt="Mini-MiMo" id="miniAvatarDeg">
+        <a href="javascript:void(0);">站长资料卡</a>
+    </div>
+    <div class="aboutXiaoMo" id="aboutXiaoMo">
+        <div class="aTop">站长资料卡 <a href="javascript:void(0);" class="aClose" id="aClose">x</a></div>
+        <div class="aTimeNow" id="aTimeNow"></div>
+        <div class="aMyPic"><img src="images/XiaoMo-MiMo520.jpg" alt="小莫图片"><img src="images/xiaomoxuezhang.gif" alt="签名"></div>
+        <div class="aMyInfo">
+            <dl>
+                <dt><font class="afontSetdt">二ぅ颜</font>小莫云联盟创始人(www.925i.cn)</dt>
+                <dd>昵称：<font class="afontSetdd">小莫学长</font></dd>
+                <dd>个人特长：<font class="afontSetdd">最大的特长就是没特长</font></dd>
+                <dd>身高：<font class="afontSetdd">1.00米</font></dd>
+                <dd>恋爱情况：<font class="afontSetdd">单身汪一枚</font></dd>
+                <dd>生日：<font class="afontSetdd">09.25</font></dd>
+                <dd>兴趣爱好：<font class="afontSetdd">听音乐、看动漫、K歌</font></dd>
+                <dd>星座：<font class="afontSetdd">天秤座</font></dd>
+                <dd>出生地：<font class="afontSetdd">中国 广西</font></dd>
+            </dl>
+        </div>
+        <div class="aMyWeiBo cl"><a href="javascript:void(0);">关注 站长小莫 的新浪微博</a></div>
+    </div>
+    <!--迷你资料卡代码结束-->
+
+    <!--网页头部-->
+    <header>
+        <div class="head">
+           <div class="logo"><img src="images/logo.png" alt="LOGO"></div>
+            <div class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="javascript:void(0);" _link="TimeLine/index.html">时光轴</a></li>
+                    <li><a href="javascript:void(0);" _link="myskills.html">站长简历</a></li>
+                    <li><a href="javascript:void(0);" _link="myskills.html">技术领域</a></li>
+                    <li><a href="javascript:void(0);" _link="shequ.html">官方社区</a></li>
+                    <li><a href="javascript:void(0);" _link="myskills.html">官方加盟</a></li>
+                    <li><a href="javascript:void(0);" _link="myskills.html">官方商城</a></li>
+                </ul>
+            </div>
+            <div class="login">
+                <div class="avatar">
+                    <a href="javascript:void(0);">
+                        <img src="images/avatar.jpg" alt="用户头像" id="userAvatarDeg">
+                    </a>
+                </div>
+                <div class="userCenter" id="userCenter">
+                    <!--<a href="MiMo.html" title="登录享受更多特权">登录</a>丨<a href="../后台界面/Register/register.html" title="没有账号？点我注册">注册</a>-->
+                    <a href="javascript:void (0);" title="登录享受更多特权" id="loginShow">登录</a>丨<a href="javascript:void (0);" title="没有账号？点我注册" id="registerShow">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="headSpace"></div>
+    <!--网页内容-->
+    <section>
+        <!--背景浮动的云-->
+        <div class="main_yun1"></div>
+        <div class="main_yun2"></div>
+        <div class="main_yun3"></div>
+
+        <!--登录窗口代码开始 - 弹窗类型-->
+        <div id="gray"></div>
+        <div class="popup" id="popup">
+            <div class="top_nav" id='top_nav'>
+                <div align="center">
+                    <span>登录账号</span>
+                    <a class="guanbi"></a>
+                </div>
+            </div>
+            <div class="min">
+                <div class="tc_login">
+                    <div class="left">
+                        <h4 align="center">手机扫描</h4>
+                        <div align="center"><img src="images/erweima.jpg" width="150" height="150" /></div>
+                        <dd>
+                            <div align="center">扫描二维码登录</div>
+                        </dd>
+                    </div>
+                    <div class="right">
+                        <form method="POST" name="form_login" target="_top">
+                            <div align="center">
+                                <a href="javascript:void (0);">短信快捷登录</a>
+                                <i class="icon-mobile-phone"></i>
+                                <input type="text" name="name" id="name" required="required" placeholder="用户名" autocomplete="off" class="input_yh">
+                                <input type="password" name="pass" id="pass" required="required" placeholder="密码" autocomplete="off" class="input_mm">
+                            </div>
+                            <dd>
+                                <div align="center"><a href="javascript:void (0);">遇到登录问题</a></div>
+                            </dd>
+                            <div align="center">
+                                <input type="submit" class="button" title="Sign In" value="登录">
+                            </div>
+                        </form>
+                        <dd>
+                            <div align="center"><a href="javascript:void (0);" id="registerNow">立即注册</a></div>
+                        </dd>
+                        <hr align="center" />
+                        <div align="center" style="color: #222;">期待更多功能 </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--登录窗口代码结束 - 弹窗类型-->
+
+        <!--实现的内容：-->
+        <!--1.一个花哨的自我介绍的界面-->
+        <!--2.全民K歌或者自己制作的音乐展示-->
+        <!--3.网页或者网站作品展示-->
+        <!--4.视频展示-->
+        <!--5.更多内容扩展...-->
+        <div class="bgc">
+            <div class="loadMain" id="loadMain">
+                <div class="loading" id="loading">
+                    <div class="loadingMark" id="loadingMark">
+                        <audio src="music/niconiconi.mp3" id="loadingAudio"></audio>
+                        <span class="loadingNow">开启<br/>新纪元</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main" id="main">
+
+                <div class="main-left" id="main-left">
+
+                    <!--1.默认主页左侧站长信息-->
+                    <div id="xiaoMoShow">
+                        <div class="xiaomoAllInfo">
+                            <div class="tabMenu_User" id="tabMenu_User"><a href="javascript:void (0);" title="切换到我的信息">◥</a></div>
+                            <div class="xiaomoPic">
+                               <img src="images/avatar.jpg" onclick="ShowMiniInfoCar()" title="查看迷你资料卡" alt="左侧资料头像">
+                            </div>
+                            <h3 style="width: 66px; margin: 5px auto;margin-bottom: 0px;">小莫学长</h3>
+                            <div class="xiaomoInfo">
+                                <p><span>灵感</span> <span>代码</span> <span>梦想</span> <span>未来</span></p>
+                                <p>喜欢尝试，期待新鲜事物</p>
+                                <p>前端即兴趣，兴趣即未来</p>
+                                <p>行路有良友，便是捷径</p>
+                                <p>带上我吧，一起看到更大的世界</p>
+                                <!--<p style="width: 250px;margin: 5px auto;"><span style="font-size: 14px;color: grey;" >◈昵称：</span>小莫学长&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 14px;color: grey;" >◈英文昵称：</span>MiMo</p>-->
+                                <!--<p style="width: 250px;margin: 5px auto;"><span style="font-size: 14px;color: grey;" >◈星座：</span>天秤座&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 14px;color: grey;" >◈我的生日：</span>09.25</p>-->
+                                <!--<p style="width: 250px;margin: 5px auto;"><span style="font-size: 14px;color: grey;" >◈座右铭：</span>"坐在你右边就是我的名字！"</p>-->
+                                <!--<p style="width: 250px;margin: 5px auto;"><span style="font-size: 14px;color: grey;" >◈个人简介：</span>小莫云联盟（网络）创始人、最渺小的我也有大大的梦想！</p>-->
+                            </div>
+                            <!--<div class="xiaomoSkill">-->
+                                <!--<a href="javascript:void (0);" title="点击查看站长的相关技能">查看站长的工作技能</a>-->
+                            <!--</div>-->
+                        </div>
+                        <!--默认主页左侧网站公告  /*ღ✚♔♚♕♛▣◈۞*/-->
+                        <!--<div class="notice">-->
+                            <!--<h2>站长大事件</h2>-->
+                            <!--<div class="notice-content">-->
+                                <!--<a href="javascript:void(0);" id="notice_link">时间轴系统上线了~欢迎看看我的成长轨迹哦~</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--默认主页左侧留言板-->
+                        <div class="messageBoard">
+                            <h2>留言板</h2>
+                            <form action="#" method="post">
+                                <input type="text" placeholder="请输入您的昵称..." class="message-userName" >
+                                <input type="text" placeholder="请输入您的邮箱/QQ号..." class="message-Email">
+                                <textarea name="message-content" id="message-content" cols="30" rows="10" maxlength="100" placeholder="写点什么内容吧...(100字以内)" class="message-content"></textarea>
+                                <input type="submit" class="message-submit" id="message-submit" value="提交我的留言">
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <!--2.用户登录后主页左侧信息-->
+                    <div id="userShow">
+                        <div class="userAllInfo">
+                            <div class="userMenu" id="userMenu"></div>
+                            <div class="tabMenu_XiaoMo" id="tabMenu_XiaoMo">
+                                <a href="javascript:void (0);" title="切换到站长信息">◤</a>
+                            </div>
+                            <div class="userPic">
+                                <!--<div class="isVip">是否为VIP贵族显示在头像中</div>-->
+                                <img src="images/userAvatar.jpg" alt="左侧用户资料头像">
+                            </div>
+                            <h4 style="text-align:center;margin: 5px auto;">ID:5201314</h4>
+                            <div class="userInfo">
+                                <ul>
+                                    <li>◈我的昵称：<a href="javascript:void (0);">我叫莫喵喵</a></li>
+                                    <li>◈我的等级：<a href="javascript:void (0);">LV6.最高级</a></li>
+                                    <li>◈社区积分：<a href="javascript:void (0);">5201314</a>&nbsp;分</li>
+                                    <li>◈我的生日：2017.02.22</li>
+                                    <li>◈恋爱情况：还吃着狗粮呢</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="guangGao_video">
+                            <video id="media" controls="controls" poster="images/4.jpg">
+                                <source src="mv/demo2.mp4" type="video/mp4">
+                            </video>
+                            <a href="http://www.925i.cn" target="_blank" class="skip"></a>
+                        </div>
+                        <div class="userAllTools">
+                            <h2 style="text-align: center;">♔我享有的功能和特权♔</h2>
+                            <div class="userTools" style="text-align: center;line-height: 120px;">
+
+                                <hr>
+                                <span>该部分界面暂未完成</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="main-right" id="main-right">
+                    <iframe id="right_iframe" src="shequ.html" frameborder="0" width="100%" height="100%"></iframe>
+                    <!--<iframe id="right_iframe" src="myskills.html" frameborder="0" width="100%" height="100%"></iframe>-->
+                    <!--<iframe id="right_iframe" src="SixMenu/index.html" frameborder="0" width="100%" height="100%"></iframe>-->
+                    <!--<iframe id="right_iframe" src="Register/register.html" frameborder="0" width="100%" height="100%"></iframe>-->
+                    <!--<div class="main-right-title">-->
+                    <!--<div class="testHtmlLoad" id="testHtmlLoad"></div>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--网页底部-->
+    <footer>
+        <div class="footer">
+            <div class="foot">
+                <div class="foot-left">
+                    <img src="images/xiaomoxuezhang.gif" alt="站长签名和工作室标志">
+                    <!--<img src="images/xiaomoxuezhangguaiguaiti.gif" alt="站长签名和工作室标志">-->
+                    <!--<video  autoplay="autoplay" width="450px" height="170px" preload="metadata">-->
+                        <!--<source src="mv/demo.mp4">-->
+                    <!--</video>-->
+                </div>
+                <div class="foot-center">
+                    <div class="guanFangLinks">
+                        <h2>合作媒体</h2>
+                        <div class="webLinks">
+                            <ul>
+                                <li><a href="javascript:void (0);">腾腾讯娱乐</a></li>
+                                <li><a href="javascript:void (0);">新浪浪娱乐</a></li>
+                                <li><a href="javascript:void (0);">优酷酷娱乐</a></li>
+                                <li><a href="javascript:void (0);">小莫云联盟</a></li>
+                                <li><a href="javascript:void (0);">官方链接5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="guangGaoLinks">
+                        <h2>友情链接</h2>
+                        <div class="webLinks">
+                            <ul>
+                                <li><a href="javascript:void (0);">友情链接1</a></li>
+                                <li><a href="javascript:void (0);">友情链接2</a></li>
+                                <li><a href="javascript:void (0);">友情链接3</a></li>
+                                <li><a href="javascript:void (0);">友情链接4</a></li>
+                                <li><a href="javascript:void (0);">友情链接5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="allianceServiceLinks">
+                        <h2>官方服务</h2>
+                        <div class="webLinks">
+                            <ul>
+                                <li><a href="javascript:void (0);">服务条款</a></li>
+                                <li><a href="javascript:void (0);">广告合作</a></li>
+                                <li><a href="javascript:void (0);">服务链接3</a></li>
+                                <li><a href="javascript:void (0);">服务链接4</a></li>
+                                <li><a href="javascript:void (0);">服务链接5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="foot-right">
+                    <div class="erweima">
+                        <img src="images/QQ_ErWeiMa1.jpg" alt="二维码">
+                    </div>
+                    <div class="xiaomoLinks">
+                        <h2>关注站长动态</h2>
+                        <div class="btnwebLinks">
+                            <ul>
+                                <li><a href="javascript:void (0);">新浪微博</a></li>
+                                <li><a href="javascript:void (0);">百度贴吧</a></li>
+                                <li><a href="javascript:void (0);">腾讯QQ空间</a></li>
+                                <li><a href="javascript:void (0);">微信公众号</a></li>
+                                <li><a href="javascript:void (0);">等待添加</a></li>
+                                <li><a href="javascript:void (0);">等待添加</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                某某地区备案 5201314aa123456号 小莫云联盟网络工作室信息服务许可 &copy;<span id="copyDate"></span><a href="http://www.925i.cn" title="小莫云联盟">WWW.925i.CN</a>
+                <a href="javascript:void (0);" title="小莫云联盟条款">使用本站前必读条款</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

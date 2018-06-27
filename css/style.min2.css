@@ -1,0 +1,23 @@
+/*滚动条美化*/
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px
+}
+
+::-webkit-scrollbar-track {
+    background: #828282;
+
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #424242;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #222;
+}
+/*滚动条美化结束*/

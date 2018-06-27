@@ -1,0 +1,76 @@
+@charset "utf-8";
+/*滚动条美化*/
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px
+}
+
+::-webkit-scrollbar-track {
+    /*background: #828282;*/
+    background: transparent;
+}
+::-webkit-scrollbar-track:hover {
+    background: #e3eaec;
+}
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00B7EE;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #00B7EE;
+}
+/*滚动条美化结束*/
+/*滚动条美化结束*/
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font-size:13px;background-color:#f0f0f0;}
+
+#box_title{width:100%;font-weight:bold;line-height:30px;font-size:14px;}
+/* con */
+#con{width:100%;height:620px;margin:0px auto;border-top:1px solid #d6d6d6;border-bottom:1px solid #d6d6d6;background-color:#FFF;overflow-y:scroll;}
+#con .bottomcover{position:absolute;bottom:0;height:35px;width:100%;background:none;pointer-events:none;background: url(../images/halftransp.png) no-repeat 0 -5px;}
+#con ul{position:relative;margin:0px 10px 0px 0px;top:0;left:0;padding:0;}
+#con ul li{width:100%;border-bottom:1px dotted #d6d6d6;padding:10px 0;_padding:8px 0;overflow:hidden;line-height:1.5;position: relative;}
+#con ul li .div_left{
+    float:left;
+    width:100px;
+    height: auto;
+}
+#con ul li .div_left .user_com_pic{
+    width: 86px;
+    height: 86px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+#con ul li .div_left .user_com_pic a img{
+    width:84px;
+    height: 84px;
+    border-radius: 50%;
+}
+#con ul li .div_left .user_com_info{
+    text-align: center;
+    color: #00C1B3;
+}
+#con ul li .div_left a{
+    display: block;
+    width: 86px;
+    height: 86px;
+}
+#con ul li .div_left a img{
+
+}
+#con ul li .div_right{float:right;width:470px;}
+#con ul li .div_right a{color:#6EAFD5;padding:0px;}
+#con ul li .div_right .user_item_pic{margin-bottom: 15px;}
+#con ul li .div_right div img{width: 100px;height: 100px;}
+#con ul li .div_right .twit_item_time{color:#999;position: absolute;left: 110px;bottom: 0px;}
+#con ul li .div_right .item_con{position: absolute;right: 0px;bottom: 2px;}
+#con ul li .div_right .item_con span{border-radius: 10px;background-color:#00b7ee;color: #fff;padding: 2px 4px;}
+#con ul li .div_right .item_con span a{color: #fff;}

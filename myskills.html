@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的简历</title>
+    <link href="css/pro-bars.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        *{
+            margin: 0px;padding: 0px;
+        }
+        .main{width: 980px;height: 740px;background-color: #fff;
+            /*box-sizing: border-box;border: 1px dashed #000;background-color: #00C1B3;*/
+        }
+        .main_title{width: 100%;height: 50px;padding-left:20px;background:#00B7EE;border-bottom: 1px solid #fff;box-sizing: border-box;color: #fff;line-height: 49px;position: relative;}
+        .main_title h2{font-size: 22px;}
+        /*.main_title h2:before{content: "«";}*/
+        /*.main_title h2:after{content: "»";}*/
+        .content{width: 100%;height: 690px;padding: 20px;box-sizing: border-box;}
+        .content .content_left{width: 35%;float: left;}
+        .content_left a{float: right;color:#222;text-decoration: underline;margin-right: 10px;font-weight: 100;}
+        /*.content_left a:hover{color:#222;text-decoration: underline;}*/
+        .c_title{width: 100%;height: 25px;background-color:#e3eaec;box-sizing: border-box;padding-left:10px;line-height: 25px;color: #222;border-radius: 2px 2px 0 0;font-size: 14px;font-weight: bold;}
+        .c_content{padding: 10px;border: 1px solid #e3eaec;color: #222;font-size: 14px;font-weight: 500;font-family: "Microsoft YaHei", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif;}
+
+        .c_content table{width: 100%;}
+        .c_content table tr{width: 100%;}
+
+        .content_left .siklls{width: 100%;height: 238px;}
+        .siklls .c_content{height: 213px;}
+
+        .siklls .c_content table tr td:first-child{width: 25%;}
+        .siklls .c_content table tr td:nth-child(2){width: 65%;}
+        .siklls .c_content table tr td:last-child{width: 10%;box-sizing: border-box;padding-left: 10px;}
+
+        .content_left .education{width: 100%;height: 200px;margin-top: 5px; }
+        .education .c_content{height: 175px;overflow: hidden;}
+        .education .c_content table tr td:first-child{width: 15%;font-size: 12px;}
+        .education .c_content table tr td:nth-child(2){width: 20%;font-size: 12px;}
+        .education .c_content table tr td:nth-child(2) span{ margin-right: 2px;}
+        .education .c_content table tr td:last-child{ box-sizing: border-box;padding-left: 10px;font-size: 12px;}
+        .education .c_content table tr td a{text-decoration: none;color: #000;}
+        .education .c_content table tr td a:hover{text-decoration: underline;}
+
+        .content_left .works{width: 100%;height: 200px;margin-top: 5px;}
+        .works .c_content{height: 175px;overflow: hidden;}
+        .works .c_content table tr td:first-child{width: 22%;font-size: 12px;}
+        .works .c_content table tr td:nth-child(2){width: 28%;font-size: 12px;}
+        .works .c_content table tr td:nth-child(2) span{ margin-right: 2px;}
+        .works .c_content table tr td:last-child{ box-sizing: border-box;padding-left: 10px;font-size: 12px;}
+        .works .c_content table tr td a{text-decoration: none;color: #000;margin-right:0px;}
+        .works .c_content table tr td a:hover{text-decoration: underline;}
+
+        .content .content_right{width: 65%; height: 648px;float: left;padding-left:10px; }
+        .content_right a{float: right;text-decoration: underline;color: #222;margin-right: 10px;font-weight: 100;}
+        /*.content_right a:hover{color:#222}*/
+        .introduce .c_content{height: 213px;overflow: hidden;}
+
+        .myWorksShow .c_content{overflow: hidden;height: 380px;}
+
+        .worksPic ul li{float: left;width: 33.333%;height:115px;margin: 2px 0px;cursor: pointer;padding: 2px;box-sizing: border-box;}
+        .worksPic ul li div{width: 100%;height: 115px;padding: 2px;box-sizing: border-box; position: relative;overflow: hidden;}
+        .worksPic ul li div img{width: 100%;height: 100%;}
+        .worksPic ul li .picText{display: block;width: 100%;height: 100%;;text-align:center;padding: 35px 4px 4px 4px;background:rgba(255,255,255,.5);color: #222;position: absolute;left: 0px;bottom: -120px;box-sizing: border-box;}
+    </style>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#content_left_myskills").fadeIn();
+            $("#content_right_myskills").fadeIn();
+
+
+            $(".worksPic ul li").hover(function(){
+                $(this).children("div").children("span").css({"bottom":"0px","transition":"bottom 1s"});
+            },function(){
+                $(this).children("div").children("span").css({"bottom":"-210px","transition":"bottom 1s"});
+            })
+        })
+    </script>
+</head>
+<body>
+    <main>
+        <div class="main">
+            <div class="main_title">
+                <h2>站长简历</h2>
+                <span style="position: absolute;top: 0px;right: 30px;" >
+                    刷新当前页面内容:
+                    <a href="myskills.html" title="刷新" style="color: #fff">☸</a>
+                </span>
+            </div>
+            <div class="content">
+                <div class="content_left" id="content_left_myskills">
+                    <div class="siklls">
+                        <div class="c_title">
+                            我的工作技能
+                            <a href="javascript:void (0);">MORE</a>
+                        </div>
+                        <div class="c_content">
+                           <table>
+                               <tr>
+                                   <td>前端开发:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-green-sea">
+                                           <div class="pro-bar bar-70 color-turquoise" data-pro-bar-percent="70">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>70%</td>
+                               </tr>
+                               <tr>
+                                   <td>美工/PS:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-wisteria">
+                                           <div class="pro-bar bar-20 color-amethyst" data-pro-bar-percent="20" data-pro-bar-delay="100">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>20%</td>
+                               </tr>
+                               <tr>
+                                   <td>办公应用:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-nephritis">
+                                           <div class="pro-bar bar-50 color-emerald" data-pro-bar-percent="50" data-pro-bar-delay="100">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>50%</td>
+                               </tr>
+                               <tr>
+                                   <td>CAD/设计:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-orange">
+                                           <div class="pro-bar bar-60 color-sun-flower" data-pro-bar-percent="60" data-pro-bar-delay="100">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>60%</td>
+                               </tr>
+                               <tr>
+                                   <td>C#语言:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-belize-hole">
+                                           <div class="pro-bar bar-60 color-peter-river" data-pro-bar-percent="60" data-pro-bar-delay="100">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>60%</td>
+                               </tr>
+                               <tr>
+                                   <td>其他语言:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-pomegranate">
+                                           <div class="pro-bar bar-30 color-alizarin" data-pro-bar-percent="30" data-pro-bar-delay="100">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>70%</td>
+                               </tr>
+                               <tr>
+                                   <td>交际能力:</td>
+                                   <td>
+                                       <div class="pro-bar-container color-midnight-blue">
+                                           <div class="pro-bar bar-80 color-wet-asphalt" data-pro-bar-percent="80" data-pro-bar-delay="100">
+                                               <div class="pro-bar-candy candy-ltr"></div>
+                                           </div>
+                                       </div>
+                                   </td>
+                                   <td>80%</td>
+                               </tr>
+                           </table>
+
+                        </div>
+                    </div>
+                    <div class="education">
+                        <div class="c_title">
+                            我的教育背景/获得的荣誉
+                            <a href="javascript:void (0);">MORE</a>
+                        </div>
+                        <div class="c_content">
+                            <table>
+                                <tr>
+                                    <td>2017.09</td>
+                                    <td>
+                                        <span>-</span>
+                                        2017.09
+                                    </td>
+                                    <td>
+                                        <a href="#">柳州某某学院丨软件开发专业</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.09</td>
+                                    <td>
+                                        <span>-</span>
+                                        2017.09
+                                    </td>
+                                    <td>
+                                        <a href="#">南宁某某中专丨计算机专业</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2017.09</td>
+                                    <td>
+                                        <span>-</span>
+                                        2017.09
+                                    </td>
+                                    <td>
+                                        <a href="#">南宁某某初中丨对网站感兴趣</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.09</td>
+                                    <td>
+                                        <span>-</span>
+                                        2017.09
+                                    </td>
+                                    <td>
+                                        <a href="#">南宁某某小学丨天真无知的年级</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.09</td>
+                                    <td>
+                                        <span>-</span>
+                                        2018.06
+                                    </td>
+                                    <td>
+                                        <a href="#">中专期间考取CAD中级证书</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.09</td>
+                                    <td>
+                                        <span>-</span>
+                                        2018.06
+                                    </td>
+                                    <td>
+                                        <a href="#">大学期间考取英语等级证书</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="works">
+                        <div class="c_title">
+                            我的实践活动/工作经验
+                            <a href="javascript:void (0);">MORE</a>
+                        </div>
+                        <div class="c_content">
+                            <table>
+                                <tr>
+                                    <td>2017.02.25</td>
+                                    <td><span>-</span>2017.02.25</td>
+                                    <td>
+                                        <a href="#">参加网络安全技能竞赛</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.02.25</td>
+                                    <td><span>-</span>2017.02.25</td>
+                                    <td>
+                                        <a href="#">参加企业网搭建比赛</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.02.25</td>
+                                    <td><span>-</span>2017.02.25</td>
+                                    <td>
+                                        <a href="#">参加社会工作实践活动</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.02.25</td>
+                                    <td><span>-</span>2017.02.25</td>
+                                    <td>
+                                        <a href="#">参加学院的跟岗实习</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.02.25</td>
+                                    <td><span>-</span>2017.02.25</td>
+                                    <td>
+                                        <a href="#">参加学院安排的顶岗实习</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2017.02.25</td>
+                                    <td><span>-</span>2017.02.25</td>
+                                    <td>
+                                        <a href="#">参加网络安全技能竞赛</a>
+                                    </td>
+                            </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_right" id="content_right_myskills">
+                    <div class="introduce" style="width: 100%;height: 238px;">
+                        <div class="c_title">
+                            自我评价
+                            <a href="javascript:void (0);">MORE</a>
+                        </div>
+                        <div class="c_content">
+                            <p style="text-indent: 2em;">
+                                本人热爱生活，性格还算开朗，乐观向上，乐于助人，进取，积极勤奋，有团队精神，拥有充实的专业知识，也有独立的思维能力，工作态度认真，乐于与人交往，对艺术有着浓厚兴趣，从小喜欢唱歌，长大后慢慢喜欢上了设计，在校园期间经常参加活动以及比赛等...
+                                再写一遍：本人热爱生活，性格还算开朗，乐观向上，乐于助人，进取，积极勤奋，有团队精神，拥有充实的专业知识，也有独立的思维能力，工作态度认真，乐于与人交往，对艺术有着浓厚兴趣，从小喜欢唱歌，长大后慢慢喜欢上了设计，在校园期间经常参加活动以及比赛等...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="myWorksShow" style="width: 100%;height: 238px;margin-top: 5px;">
+                        <div class="c_title">
+                            作品/荣誉墙（展示）
+                            <a href="javascript:void (0);">MORE</a>
+                        </div>
+                        <div class="c_content">
+                            <div class="worksPic">
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_01.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_02.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_03.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_04.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_05.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_06.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_07.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_08.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/demo/w_09.gif" alt="作品/荣誉/证书">
+                                            <span class="picText">
+                                                这是作品或者荣誉的介绍（限定20字）
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

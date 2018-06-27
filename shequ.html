@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>官方社区</title>
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link type="text/css" rel="stylesheet" href="css/shequ.css" />
+    <!--jQuery-->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <!--jQuery动画暂停插件-->
+    <script type="text/javascript" src="js/jquery.pause.min.js"></script>
+    <!--滚动效果js-->
+    <script type="text/javascript">
+        $(function () {
+            var scrtime;
+
+            var $ul = $("#con ul");
+            var liFirstHeight = $ul.find("li:first").height();//第一个li的高度
+            $ul.css({ top: "-" + liFirstHeight - 20 + "px" });//利用css的top属性将第一个li隐藏在列表上方	 因li的上下padding:10px所以要-20
+
+            $("#con").hover(function () {
+                $ul.pause();//暂停动画
+                clearInterval(scrtime);
+            }, function () {
+                $ul.resume();//恢复播放动画
+                scrtime = setInterval(function scrolllist() {
+                    //动画形式展现第一个li
+                    $ul.animate({ top: 0 + "px" }, 1500, function () {
+                        //动画完成时
+                        $ul.find("li:last").prependTo($ul);//将ul的最后一个剪切li插入为ul的第一个li
+                        liFirstHeight = $ul.find("li:first").height();//刚插入的li的高度
+                        $ul.css({ top: "-" + liFirstHeight - 20 + "px" });//利用css的top属性将刚插入的li隐藏在列表上方  因li的上下padding:10px所以要-20
+                    });
+                }, 3300);
+
+            }).trigger("mouseleave");//通过trigger("mouseleave")函数来触发hover事件的第2个函数
+
+        });
+    </script>
+
+    <style>
+        *{
+            margin: 0px;padding: 0px;
+        }
+        .main{width: 980px;height: 740px;box-sizing: border-box;background-color: #fff;}
+        .main_title{width: 100%;height: 50px;background: #00B7EE;border-bottom: 1px solid #fff;box-sizing: border-box;padding-left:20px;color: #fff;line-height: 49px;position: relative;}
+        .main_title h2{font-size: 22px}
+        /*.main_title h2:before{content: "«";}*/
+        /*.main_title h2:after{content: "»";}*/
+        .content{width: 100%;height: 690px;padding: 20px;box-sizing: border-box;}
+        .content .c_left{width:35%;height: 650px;float: left;box-sizing: border-box;padding-right: 20px;overflow: hidden;border-bottom: 1px solid #d6d6d6;}
+        .content .c_right{width:65%;height: 650px;float: left;box-sizing: border-box;border-left: 1px solid #d6d6d6;padding-left: 20px;border-bottom: 1px solid #d6d6d6;position:relative;}
+
+        #msgBox form div{position:relative;color:#999;margin-top:10px;}
+        #conBox{border-radius:6px;width: 100%;max-width: 310px;resize: none;  margin:0px;}
+        #msgBox form .maxNum{font:26px/30px Georgia, Tahoma, Arial;padding:0 5px;}
+        #sendBtn {
+            border: 0;
+            width: 80px;
+            height: 28px;
+            cursor: pointer;
+            margin-left: 10px;
+            border: 1px solid #fff;
+            background: url(images/btn.png) no-repeat -16px -1px;
+            border-radius: 5px;
+
+        }
+
+        .tr{overflow:hidden;zoom:1;position: relative;}
+        .tr p{float:right;line-height:30px;}
+        .tr *{float:left;}
+        #f-up-pic{background-color: #E0E0E0;width: 65px;height: 24px;text-align:center;line-height: 24px;position: absolute;top: 4px;left: 5px;color: #000;box-sizing: border-box;border: 1px solid #989898;}
+        #f-up-pic:hover{background:rgba(225,225,225,.9);}
+        #f-pic{width: 80px;border: 0px;display: inline;opacity: 0;}
+        #msgBox .list{padding: 10px 0px;overflow: hidden;}
+        #msgBox .list h3{position:relative;height:33px;font-size:14px;font-weight:400;background:#e3eaec;border:1px solid #dee4e7;}
+        #msgBox .list h3 span{position:absolute;left:6px;top:6px;background:#fff;line-height:28px;display:inline-block;padding:0 15px;}
+        #msgBox .list ul{overflow:hidden;zoom:1;}
+        #msgBox .list ul li{float:left;clear:both;height:auto;width:100%;border-bottom:1px dashed #d8d8d8;padding:10px 0;background:#fff;overflow:hidden;}
+        #msgBox .list ul li.hover{background:#f5f5f5;}
+        #msgBox .list .userPic{float:left;width:50px;height:50px;display:inline;border:1px solid #ccc;border-radius:3px;}
+        #msgBox .list .userPic img{width:48px;height:48px;}
+        #msgBox .list .list_content{float:left;width:238px;font-size:14px;margin-left:10px;font-family:arial;word-wrap:break-word;overflow-y: inherit;}
+        #msgBox .list .userName{display:inline;padding-right:5px;}
+        #msgBox .list .userName a{color:#00b7ee;font-size: 12px;}
+        #msgBox .list .msgInfo{display:inline;word-wrap:break-word;font-size: 12px;line-height: 12px;}
+        #msgBox .list .times{color:#889db6;font:12px/18px arial;margin-top:5px;overflow:hidden;zoom:1;}
+        #msgBox .list .times span{float:left;}
+        #msgBox .list .times a{float:right;color:#889db6;}
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="main">
+            <div class="main_title">
+                <h2>官方社区</h2>
+                <span style="position: absolute;top: 0px;right: 30px;" >
+                    刷新当前页面内容:
+                    <a href="shequ.html" title="刷新" style="color: #fff">☸</a>
+                </span>
+            </div>
+            <div class="content">
+                <div class="c_left">
+                    <div class="msgBox" id="msgBox">
+                        <form action="#">
+                            <div>
+                                <textarea id="conBox" class="f-text" placeholder="来 , 说说你在做什么 , 想什么"></textarea>
+                            </div>
+                            <div class="tr">
+                                <a href="javascript:void (0);" id="f-up-pic">上传图片</a>
+                                <input type="file" name="f-pic" id="f-pic">
+                                <p>
+                                    <span class="countTxt">还能输入</span><strong class="maxNum">140</strong><span>个字</span>
+                                    <input id="sendBtn" type="submit" value="" title="快捷键 Ctrl+Enter" />
+                                </p>
+                            </div>
+                        </form>
+                        <div class="list">
+                            <h3><span>我最近的动态</span></h3>
+                            <ul>
+                                <li>
+                                    <div class="userPic"><img src="images/userAvatar.jpg" /></div>
+                                    <div class="list_content">
+                                        <div class="userName"><a href="javascript:void (0);">这里是用户名</a>:</div>
+                                        <div class="msgInfo">新增广播功能！！！</div>
+                                        <div class="times"><span>2017-02-26 23:00</span><a class="del" href="javascript:;">删除</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="userPic"><img src="images/userAvatar.jpg" /></div>
+                                    <div class="list_content">
+                                        <div class="userName"><a href="javascript:void (0);">这里是用户名</a>:</div>
+                                        <div class="msgInfo">小小骑手牵着小小马儿。你俩是来参加卖萌大赛的吧！！！</div>
+                                        <div class="times"><span>2017-02-26 23:00</span><a class="del" href="javascript:;">删除</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="userPic"><img src="images/userAvatar.jpg" /></div>
+                                    <div class="list_content">
+                                        <div class="userName"><a href="javascript:void (0);">这里是用户名</a>:</div>
+                                        <div class="msgInfo">来参加卖萌大赛！</div>
+                                        <div class="times"><span>2017-02-26 23:00</span><a class="del" href="javascript:;">删除</a></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="userPic"><img src="images/userAvatar.jpg" /></div>
+                                    <div class="list_content">
+                                        <div class="userName"><a href="javascript:void (0);">这里是用户名</a>:</div>
+                                        <div class="msgInfo">唉，总是在越忙的时候事情越多。。。我的神曲你在哪里呀~~~亲耐滴·你再不出来你就木有人疼了！！#248#</div>
+                                        <div class="msgPic"><img src="images/picDemo02.jpg" alt="文章图片" style="width: 30px;height: 30px;"></div>
+                                        <div class="times"><span>2017-02-26 23:00</span><a class="del" href="javascript:;">删除</a></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="c_right">
+                    <div id="box_title">大家正在说 <a href="javascript:void (0);" style="float: right;margin-right: 10px;text-decoration: underline;color: #888;">切换分页模式</a></div>
+                    <div id="con">
+                        <div class="bottomcover" style="z-index:2;"></div>
+                        <ul>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###">这里是用户昵称</a>：唉，总是在越忙的时候事情越多。。。我的神曲你在哪里呀~~~亲耐滴&middot;你再不出来你就木有人疼了！！#248#
+                                    <div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>
+                                    <div class="twit_item_time">3分钟前</div>
+                                    <div class="item_con" >
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###">这里是用户昵称</a>：看来今天收到礼品的亲们不少哦~
+                                    <!--<div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>-->
+                                    <div class="twit_item_time">13分钟前</div>
+                                    <div class="item_con">
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###">这里是用户昵称</a>：【打扰了，@EsonLong_摄视度，微博网友请您帮助】&ldquo; 请问係广州有冇鸿福堂吖？想试试啊，平时静係 ...&rdquo;帮助回答请点击http://www.htmleaf.com ，谢谢！[不想被求助点击http://www.htmleaf.com ]
+                                    <div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>
+                                    <div class="twit_item_time">16分钟前</div>
+                                    <div class="item_con">
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###">这里是用户昵称</a>：【新型电话骗局盯上有线电视用户】一些市民接到陌生电话，提醒自家的宽带和有线电视就要到期了，在两小时内不续费就要被断网。警方提醒，这是一种新的电话骗局方式，骗子的最终目的是让受害人把资金转移到所谓的&ldquo;安全账户&rdquo;里。警方提醒大家万一遇到类似情况，可以拨打正规客服电话咨询哦。
+                                    <div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>
+                                    <div class="twit_item_time">17分钟前</div>
+                                    <div class="item_con">
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###">这里是用户昵称</a>：【什么时候才能看见外星人啊】《西班牙渔夫意外拍的军方与飞碟UFO对峙》  http://www.htmleaf.com  （分享自 @土豆网）
+                                    <div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>
+                                    <div class="twit_item_time">18分钟前</div>
+                                    <div class="item_con">
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###">这里是用户昵称</a>：小小骑手牵着小小马儿。你俩是来参加卖萌大赛的吧！！！！
+                                    <div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>
+                                    <div class="twit_item_time">22分钟前</div>
+                                    <div class="item_con">
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div_left">
+                                    <div class="user_com_pic">
+                                        <a href="javascript:void(0);"><img src="images/userAvatar.jpg" title="用户头像"></a>
+                                    </div>
+                                    <div class="user_com_info">
+                                        <p>VIP贵族</p>
+                                        <p>LV6.最高等级</p>
+                                    </div>
+                                </div>
+                                <div class="div_right">
+                                    <a href="###" target="_blank">这里是用户昵称</a>：学会沉默，至少平静。有时候，被人误解，不想争辩，所以选择沉默。本来就不是所有人都得了解你，因此不必对全世界喊话。生命中往往有连舒伯特都无言以对的时刻，毕竟不是所有的是非都能条列清楚，甚至可能根本没有真正的是与非。那么，不想说话，就不说吧，在多说无益的时候，也许沉默就是最好的解释。
+                                    <div class="user_item_pic"><img src="images/picDemo02.jpg" alt="文章图片"></div>
+                                    <div class="twit_item_time">1小时前</div>
+                                    <div class="item_con">
+                                        <span>点击量：<i>5201314</i>次</span>
+                                        <span><a href="javascript:void (0);">评论</a></span>
+                                        <span><a href="javascript:void (0);">删除</a></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

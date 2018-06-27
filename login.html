@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!--meta标签： http://www.haorooms.com/post/html_meta_ds-->
+		<meta charset="UTF-8">
+		<meta name="author" content="二颜，tzxiaomo@outlook.com" />
+		<title>登录  - WWW.925i.CN</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/loginAndRegister.css" />
+	</head>
+
+	<body class="bg">
+		<div class="container swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<!--动画效果：
+					flipInY:Y轴翻转 、lipInX:X轴翻转 
+					fadeInDown:从上往下、fadeInUp:从下往上
+					zoomInDown:从中间变大（上往下）、zoomInUp:从中间变大（下往上）
+					bounceInLeft:从左往右、bounceInRight:从右往左
+					-->
+					<div class="login ani" id="login" swiper-animate-effect="flipInY" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+						<div class="login-head text-center">
+							<img src="images/avatar.jpg" alt="头像" />
+						</div>
+						<div class="login-title text-center">
+							<h3>登录</h3>
+						</div>
+						<div class="login-body">
+							<form action="" class="form-horizontal">
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon addOnStyle"><span class="glyphicon glyphicon-user"></span></span>
+										<input type="text" class="form-control" placeholder="请输入账号" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon addOnStyle"><span class="glyphicon glyphicon-lock"></span></span>
+										<input type="password" class="form-control" placeholder="请输入密码" />
+										<span class="input-group-addon addOnWadnH">
+									        <input type="button" id="forgetPass" value="忘记密码" onclick="javascript:alert('忘记密码，此处请填写找回密码链接(#^.^#)！')">
+									   </span>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon addOnStyle"><span class="glyphicon glyphicon-bookmark"></span></span>
+										<input type="text" id="codeValidValue" class="form-control" placeholder="请输入验证码" />
+										<span class="input-group-addon addOnWadnH">
+											<input type="button" id="code" onclick="createCode()" />
+										</span>
+									</div>
+								</div>
+								<div class="form-group loginGo">
+									<button type="button" class="btn btn-success pull-left" onclick="Login()" id="login-btn">登录</button>
+									<a href="javascript:alert('立即注册，此处请填写注册页面链接(#^.^#)!')" class="btn btn-default pull-right">没有账号？立即注册</a>
+								</div>
+							</form>
+						</div>
+						<div class="login-foot text-center">
+							<span class="loadMessage"></span>
+							<hr />
+							<a class="goIndex" href="javascript:alert('返回首页，此处请填写首页链接(#^.^#)！')">返回首页</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/swiper.animate1.0.2.min.js"></script>
+		<script src="js/loginAndRegister.js">
+		</script>
+		<script type="text/javascript">
+			//登录窗口的加载效果
+			var mySwiper = new Swiper('.swiper-container', {
+				onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+					swiperAnimateCache(swiper); //隐藏动画元素 
+					swiperAnimate(swiper); //初始化完成开始动画
+				},
+				onSlideChangeEnd: function(swiper) {
+					swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				}
+			})		
+			
+		</script>
+	</body>
+
+</html>
